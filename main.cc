@@ -12,9 +12,17 @@ int Potencia(int a, int b)
         return a * Potencia(a, b - 1);
 }
 
-int main()
+int SumaNaturales(int n)
 {
-    int base, exponente;
+    if (n == 1)
+        return 1;
+    else
+        return n + SumaNaturales(n - 1);
+}
+
+int main(int argc, char *argv[])
+{
+    int base, exponente, N;
 
     std::cout << "Ingrese la base: ";
     std::cin >> base;
@@ -26,18 +34,10 @@ int main()
 
     std::cout << base << " elevado a la " << exponente << " es: " << result << std::endl;
 
-
-     int N;
-      
-     std::cout << "Ingresa el valor de N: ";
-     std::cin >> N;
-     std::cout << "La suma de los primeros " << N << " números naturales es: " << sumaNaturales(N) <<std:: endl;
-     return 0; 
+    std::cout << "Ingresa el valor de N: ";
+    std::cin >> N;
+    std::cout << "La suma de los primeros " << N << " números naturales es: " << SumaNaturales(N) << std::endl;
+    return 0;
 }
 
-int sumaNaturales(int n) {
-    if (n == 1)
-        return 1;
-    else
-        return n + sumaNaturales(n - 1);
-}
+
